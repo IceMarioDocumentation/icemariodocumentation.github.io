@@ -76,8 +76,10 @@
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
 		<h3>New Features</h3>
-		<p>(Updated October 29, 2021 9:40 PM PDT)</p>
+		<p>(Updated October 30, 2021 12:30 PM PDT)</p>
 		<p>
+			An FFA survival wars tracker has been added. <br><br>
+
 			Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. <br><br>
 
 			A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline. 
@@ -110,7 +112,20 @@
 		<a id="cwschedule"><h3>1. Clan War Scheduler</h3></a>
 		
 		<p>Creates schedules for people to react to.
-			Note: the following commands will only work if <code>enable-schedule</code> is set to true (default is true). By default, Ice Mario will ping members that have reacted 1 hour before an event as well as when an event starts. Also, each schedule will be disabled (indicated by the color black) 1 hour after the scheduled time. This can all be adjusted by setting the Clan War Scheduler <a href="#config">config options</a>.
+			Note: the following commands will only work if <code>enable-schedule</code> is set to true (default is true). By default, Ice Mario will ping members that have reacted 1 hour before an event as well as when an event starts. Also, each schedule will be disabled (indicated by the color black) 1 hour after the scheduled time. You can also have Ice Mario delete the schedule after 1 hour instead. This can all be adjusted by setting the Clan War Scheduler <a href="#config">config options</a>.
+		</p>
+
+		<p>
+			If someone signs up for two or more events happening at the same time, Ice Mario will send a warning message about the schedule conflict.
+		</p>
+
+		<p>
+			The schedule message color will change based on the number of people that have signed up. They are as follows:<br>
+			<ul>
+				<li>Red: The <code>can list</code> and <code>sub list</code> have a combined total of 2 or less people.</li>
+				<li>Green: There are 4 or more players on the <code>can list</code>.</li>
+				<li>Yellow: When there are almost enough people for an event.</li>
+			</ul>
 		</p>
 
 		<p class="description">
@@ -149,7 +164,7 @@
 			<span style="margin-left: -35px">Add one of the following reactions to a schedule to modify it:</span>
 			<br>
 			<!-- Go to https://www.w3schools.com/charsets/ref_emoji.asp for a list of emoji codes -->
-			&#128221: Edit the schedule title. <br>
+			&#128221: Edit the schedule title, date, or restriction. <br>
 			&#10060: Enable or disable a schedule. The schedule will be black if disabled. <br>
 			&#128260: Switch between a condensed and uncondensed schedule format.
 		</p>
@@ -196,20 +211,27 @@
 			<code class="command">!startsurvival</code><br>
 			<code class="command">team1Name, player1, player2, player3, player4</code><br>
 			<code class="command">team2Name, player1, player2, player3, player4</code><br>
-			Starts a survival war life tracker. You can use <code>!ss</code> instead of <code>!startsurvival</code>. There should be 3 lines total. 
+			Starts a team survival war life tracker. See below to see how to create an FFA survival tracker. You can use <code>!ss</code> instead of <code>!startsurvival</code>. There should be 3 lines total. 
 		</p>
 
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903745775559901274/image0.png" alt="Example survival war" height=400px>
 
 		<p class="description">
+			<code class="command">!startsurvival player1, player2, ..., playerN</code> <br>
+			Starts an FFA survival war life tracker. For FFA, the command and player list should all be on the same line. There can be any number of players; it is not limited to only 8 players. You can use <code>!ss</code> instead of <code>!startsurvival</code>. 
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/904088272093999164/image0.png" alt="Example FFA survival war" height=300px>
+
+		<p class="description">
 			<code class="command">!x player#</code> <br>
-			Remove a life from someone <br><br>
+			Remove a life from someone.
 		</p>
 
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903745762792464434/image0.png" alt="Example survival war remove" height=400px>
 
 		<p>
-			Note: You can use <code>!u</code> and <code>!setteams</code> during survival wars. Once a team has lost all their lives, Ice Mario will automatically generate a table!
+			Note: You can use <code>!u</code> and <code>!setteams</code> during survival wars. For the team survival format, once a team has lost all their lives, Ice Mario will automatically generate a table!
 		</p> 
 	</div>
 
@@ -350,7 +372,10 @@
 
 			<code class="command" style="color:#04D309">!scoreboard</code> <i>or</i> <br>
 			<code class="command" style="color:#04D309">!scoreboard # player1, player2, ..., player8</code> <br> 
-			Generate the scoreboard for a mogi. Note: This command is only available in the MKTC lounge server and in servers where <code>enable-mogi-gatherer</code> is set to <code style="color:orange">true</code>.
+			Generate the scoreboard for a mogi. Note: This command is only available in the MKTC lounge server and in servers where <code>enable-mogi-gatherer</code> is set to <code style="color:orange">true</code>. <br><br>
+
+			<code class="command" style="color:#04D309">!mmrlu</code> <br>
+			Get the mmr of the current mogi lu. This command is only available in the MKTC Lounge server.<br><br>
 		</p>
 	</div>
 
@@ -398,7 +423,7 @@
 
 		<p class="description">
 			<code class="command">!cca &ltcommand&gt, &ltvalue&gt</code> <i>or</i> <br>
-			<code class="command">!customcommandadd &ltcommand&gt, &ltvalue&gt</code> <i>or</i> <br>
+			<code class="command">!customcommandadd &ltcommand&gt, &ltvalue&gt</code> <br>
 			Add or update a custom command. There should be a comma separating <code>command</code> and <code>value</code>, and both of them can be more than one word. If you would like Ice Mario to send back an image instead of text, provide the image link to <code>value</code>. All custom commands will use "!" as the prefix. Here is an example of adding the command <code>!invite</code>:<br>
 		</p>
 
@@ -467,6 +492,10 @@
 
 			<code class="command" style="color:#04D309">!teams</code> <br>
 			Randomize teams. More info can be found in the miscellaneous commands section <a href="#misc">here</a>.<br><br>
+
+			<code class="command" style="color:#04D309">!scoreboard</code> <i>or</i> <br>
+			<code class="command" style="color:#04D309">!scoreboard # player1, player2, ..., player8</code> <br> 
+			Generate the scoreboard for a mogi. Note: This command is only available in the MKTC lounge server and in servers where <code>enable-mogi-gatherer</code> is set to <code style="color:orange">true</code>.
 		</p>
 	</div>
 
