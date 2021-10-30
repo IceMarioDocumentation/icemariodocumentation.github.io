@@ -6,6 +6,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta charset="utf-8">
 	</head>
 		
 	<style> 
@@ -18,21 +19,532 @@
 		h3 {
 			color: #00B0F0;
 		}
+
+		.text {
+			color: white;
+			margin-left: 70px;
+			margin-right: 70px;
+			padding-bottom: 20px;
+		}
+		.whiteCode {
+			color: #FFFFFF;
+			background-color: #2C2F33;
+			padding: 2px;
+		}
+		.command {
+			color: #00B0F0;
+			background-color: #2C2F33;
+			padding: 2px;
+			margin-left: -35px;
+		}
+		.description {
+			margin-left: 35px;
+		}
+		.image {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		hr.line {
+			margin-left: 40px;
+			margin-right: 40px;
+		}
 	</style>
 	<body>
 
 	<div style="background: linear-gradient(#00B0F0, #4472C4); height:80px; text-align: center">
 		<h2 style="color: white">Ice Mario Documentation
-			<img src="https://media.discordapp.net/attachments/771426480126558229/903669204283179008/icemario.png" alt="Ice Mario" height=100% >
+			<img src="https://media.discordapp.net/attachments/771426480126558229/903669204283179008/icemario.png" alt="Ice Mario" height=100%>
 		</h2>
 	</div>
 
-
 	<br>
-	<div class="container">
+
+	<div class="text">
+		<h3>About</h3>
 		<p>
-			<h3>Documentation coming soon!</h3>
+			<code>Ice Mario</code> is a Mario Kart Tour bot with many features focused around the competetive scene. This page will outline all the commands available in detail, and some commands will also have example use cases. You can also use the command <code>im!help</code> to get help on a certain module.<br><br>
+
+			You can invite Ice Mario into your server by clicking <a href="https://discord.com/api/oauth2/authorize?client_id=761673331388317717&permissions=362560&scope=bot">here</a>.<br> <br>
+
+			If you have any questions, want to suggest new features, would like me to add a custom command for your server, or would like to request stored data be deleted, feel free to contact me on Discord: Jimmy ツ#5440. 
 		</p>
 	</div>
+
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<h3>New Features</h3>
+		<p>(Updated October 29, 2021 9:40 PM PDT)</p>
+		<p>
+			Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. <br><br>
+
+			A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline. 
+		</p>
+	</div>
+
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<h3>Contents</h3>
+		<p>Here are the links to different sections of this document:</p>
+		<a href="#cwschedule">1. Clan War Scheduler</a> <br>
+		<a href="#score">2. Clan War Score Tracker</a> <br>
+		<a href="#table">3. Table maker</a> <br>
+		<a href="#logos">4. Logos</a> <br>
+		<a href="#lounge">5. MKTC Lounge</a> <br>
+		<a href="#cups">6. Multiplayer Cup</a> <br>
+		<a href="#ranked">7. Ranked Scores</a> <br>
+		<a href="#cc">8. Custom Commands</a> <br>
+		<a href="#mogi">9. Mogi Gatherer</a> <br>
+		<a href="#misc">10. Miscellaneous commands</a> <br>
+		<a href="#config">11. Server Configuration</a> <br>
+		<a href=""></a>
+
+	</div>
+
+	 <!-- Clan war scheduler -->
+
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="cwschedule"><h3>1. Clan War Scheduler</h3></a>
+		
+		<p>Creates schedules for people to react to.
+			Note: the following commands will only work if <code>enable-schedule</code> is set to true (default is true). By default, Ice Mario will ping members that have reacted 1 hour before an event as well as when an event starts. Also, each schedule will be disabled (indicated by the color black) 1 hour after the scheduled time. This can all be adjusted by setting the Clan War Scheduler <a href="#config">config options</a>.
+		</p>
+
+		<p class="description">
+			<code class="command">!create &ltevent title&gt &ltdate and time&gt [optional restriction or preference]</code> <br>
+			Create a new schedule. You will need to provide the event title as well as the date. Optionally, you can use <span class="whiteCode" style="color: #00B0F0">!createc</span> instead to create a condensed schedule; each member is shown on one line instead of on separate lines for each reaction. <code>optional restriction or preferance</code> will show up in a line named Restricted, and this allows people to see what the preferance is. Reactions can be restricted so that only certain roles can react to join. If you would like this feature, feel free to contact me (Jimmy ツ#5440).
+		</p> 
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903713374733484092/image0.png" alt="Example Schedule" height=300px>
+
+		<p class="description">
+			People can react to one of the three reactions on the message, and the schedule will update accordingly. It's recommended to give Ice Mario <span class="whiteCode">MANAGE_MESSAGES</span> permission in your schedule channel because it will automatically remove someone's previous reaction if they switch to a different one. 
+			<br><br>
+
+			<code class="command">!scheduleedit &ltschedule message link&gt &ltnew title and date&gt</code> <br>
+			Edit an existing schedule's title, the date, or the restriction. <br><br>
+
+			<code class="command">!scheduleadd &ltschedule message link&gt &ltcan/sub&gt &ltmember ping&gt</code> <br>
+			Add someone to an existing schedule manually. The second argument should be either "can" or "sub".
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903719253457375253/image0.png" alt="Example schedule add" height=100px>
+
+		<p class="description">
+			<code class="command">!scheduleremove &ltschedule message link&gt &ltmember ping&gt</code> <br>
+			Remove someone from an existing schedule manually. <br> <br>
+			
+			<code class="command">!schedule</code> <br>
+			Get a list of all the schedules in your server for the day (based on PT time). <br><br>
+
+			<code class="command">!myschedule</code> <br>
+			Get a list of all the schedules you have signed up for. <br><br>
+
+			<code class="command">!stickyschedule</code> <br>
+			Initializes a sticky schedule for a server. This will show a list of all the schedules, and it will be updated once a minute. This is most helpful if its used in its own channel. Note: you will need <span class="whiteCode">MANAGE_MESSAGES</span> permission. This command can be used multiple times, but only the most recent message will be updated. You may delete the sticky schedule message to stop further updates. <br><br>
+
+			<span style="margin-left: -35px">Add one of the following reactions to a schedule to modify it:</span>
+			<br>
+			<!-- Go to https://www.w3schools.com/charsets/ref_emoji.asp for a list of emoji codes -->
+			&#128221: Edit the schedule title. <br>
+			&#10060: Enable or disable a schedule. The schedule will be black if disabled. <br>
+			&#128260: Switch between a condensed and uncondensed schedule format.
+		</p>
+
+	</div>
+
+	<!-- Clan War Score Tracker -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="score"><h3>2. Clan War Score Tracker</h3></a>
+		
+		<p>
+			Keep track of your team's score during a war. Note: the following commands will only work if <code>enable-score-tracker</code> is set to true (default is true). This will work for both a 4v4 and a team survival war event.
+		</p>
+
+		<p class="description">
+			<code class="command">!startwar opponentTeam</code> <i>or</i> <br>
+			<code class="command">!startwar yourTeam opponentTeam</code> <br>
+			Starts a new score tracker by clearing the previous scores and sets the team names. This is equivalent to using <code>!u all</code> then <code>!setteams</code>. If the top command is used (only specify the opponent team), then yourTeam's default value is <code>default-team-name</code> (default value is "team1"); you can change this by updating the server config settings. If <code>yourTeam</code> is provided, this will override the value in the config settings. <br><br>
+
+			<code class="command">!setteams opponentTeam</code> <i>or</i> <br>
+			<code class="command">!setteams yourTeam opponentTeam</code> <br>
+			Set the opponent team or both team names. This can be skipped if you use <code>!startwar</code>. <br><br>
+
+			<code class="command">!a #1 #2 #3 #4</code> <br>
+			Adds the score for a race using finish positions #1 to #4.
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903740635767529482/image0.png" alt="Example score add" height=300px>
+
+		<p class="description">
+			<code class="command">!u</code> <br>
+			Undo the most recent race score <br><br>
+
+			<code class="command">!u all</code> <br>
+			Clears all the race scores in the current channel <br><br>
+
+			<code class="command">!penalty &ltpoints&gt &ltteam name&gt</code> <br>
+			Applies a penalty to the specified team <br><br>
+
+			<span style="margin-left: -35px">The following commands can be used to keep track of a team survival war:</span>
+			<br><br>
+
+			<code class="command">!startsurvival</code><br>
+			<code class="command">team1Name, player1, player2, player3, player4</code><br>
+			<code class="command">team2Name, player1, player2, player3, player4</code><br>
+			Starts a survival war life tracker. You can use <code>!ss</code> instead of <code>!startsurvival</code>. There should be 3 lines total. 
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903745775559901274/image0.png" alt="Example survival war" height=400px>
+
+		<p class="description">
+			<code class="command">!x player#</code> <br>
+			Remove a life from someone <br><br>
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903745762792464434/image0.png" alt="Example survival war remove" height=400px>
+
+		<p>
+			Note: You can use <code>!u</code> and <code>!setteams</code> during survival wars. Once a team has lost all their lives, Ice Mario will automatically generate a table!
+		</p> 
+	</div>
+
+	<!-- Table maker -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="table"><h3>3. Table maker</h3></a>
+		
+		<p>
+			Make a clan war table. Note: the following commands will only work if <code>enable-table-maker</code> is set to true (default is true). Ice Mario's table maker can easily add team logos, specify a table style (such as for cwl), and will generate a table with twice the resolution as from gb.hlorenzi.com for a more clear image!
+		</p>
+
+		<p class="description">
+			<code class="command">!table [style options]</code> <br>
+			<code class="command">[table options]</code> <br>
+			<code class="command">Team1</code> <br>
+			<code class="command">Player1 [us] 90</code> <br>
+			<code class="command">Player2 [mx] 90</code> <br>
+			<code class="command">...</code> <br>
+
+			To add team logos, use <code>!tablel</code> instead of <code>!table</code>. <br><br>
+
+			[style options]: Optional style modifiers. All style options should be written on the same line as the command, separated by a space. <br>
+
+		</p>
+
+		<div style="margin-left: 40px">
+			<ul>
+				<li><code>cwl</code>: Make a CWL table</li>
+				<li><code>cyclone</code>: Make a cyclone table</li>
+				<li><code>sw</code>: Make a survival war table</li>
+				<li><code>mku</code>: Make an MKU table</li>
+				<li><code>mkt</code>: Add the MKT logo in the middle of the table. <code>cyclone</code> and <code>sw</code> will automatically add it, unless you specify <code>mktoff</code></li>
+				<li><code>mktoff</code>: Don't add the mkt logo. This option can be used to force the table maker to not add the MKT logo.</li>
+			</ul>
+		</div> 
+
+		<p class="description">
+			[Table options]: Optional table modifiers. Each table option should be on its own line, and it should start with a #. <br>
+		</p>
+
+		<div style="margin-left: 40px">
+			<ul>
+				<li><code>#date &ltdate&gt</code>: Set the date on the header</li>
+				<li><code>#title &lttitle&gt</code>: Set a custom title to the left of the date</li>
+				<li><code>#dotalpha &ltval&gt</code>: Set the dot transparency. The value should between 0 and 1; a value of 0 will not display the dots.</li>
+				<li><code>#dotcolor &lt#000000&gt</code>: Set the dot color in hex format</li>
+				<li><code>#bgbright &ltval&gt</code>: Set the background brightness if a background image is being used. Val should be between 0 and 1 where 0 is full dark and 1 is full bright.</li>
+			</ul>
+		</div>
+
+		<p class="description">
+			Additional ways to customize the table:
+		</p>
+
+		<div style="margin-left: 40px">
+			<ul>
+				<li>To set the table background with an image, send the image at the same time you use the command. Then, the default table option values are dotalpha=0, and bgbright=0.7. </li>
+				<li>To set the team color, add a hex color string (#000000) to the right of the team name. This will override the colors if <code>!tablel</code> is used, but this will have no effect if a <code>style option</code> is used (such as cwl, cyclone, or mku).</li>
+				<li>To add a penalty to a player, subtract the penalty amount to the right of the player's score</li>
+				<li>To add a penalty to a team, add a new player to a new line with the name Penalty and subtract the penalty amount. For example, adding <code>Penalty -10</code> will apply a penalty of 10 to a team.</li>
+			</ul>
+		</div>
+
+		<p>The following are examples of how to create a table.</p>
+
+		<p style="color:orange">Create a regular table:</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903765185746075768/image0.png" alt="Table 1" height=600px>
+
+		<p style="color:orange">Create a table with team logos, and also set the style to be cyclone:</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903765186123546734/image1.png" alt="Table 2" height=600px>
+
+		<p style="color:orange">Add the MKT logo and add a custom title:</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903857830476537876/image0.png" alt="Table 3" height=600px>
+
+		<p style="color:orange">Add team logos, specify the team colors, add a penalty to a player, and add a penalty to a team:</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903765186773672006/image2.png" alt="Table 4" height=600px>
+
+		<p>
+			Ice Mario will do its best to make sure the points add up correctly. If the total is between 400 and 500, it will make sure the points add to 468, and if the total is between 900 and 1050, it will make sure the points add to 984. Outside this range, Ice Mario will check to see if the total is divisible by either 39 or 82. If everything is correct, the table message will be green. Otherwise, there will be one or more warning messages.
+		</p>
+	</div>
+
+	<!-- Logos -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="logos"><h3>4. Logos</h3></a>
+		
+		<p>The logos manager.</p>
+
+		<p class="description">
+			<code class="command">!getlogo &ltteamName&gt</code> <br>
+			Send back the team logo sepcified by <code>teamName</code> if available. <br><br>
+
+			<code class="command">!listlogos</code> <br>
+			Get a list of all the logos available. <br><br>
+
+			<code class="command">!addlogo &ltteamName&gt [optional image link]</code> <br>
+			Adds a new logo. The clan tag should be one word without any spaces. Optionally, you can provide the logo link in <code>optional image link</code> if you have the url available. Otherwise, send the image when using the command. When logos are added, they will be immediately available, and they will eventually become a "built-in" logo. This just means they will be cropped, the background will be removed, and a team color will be assigned to it. Built-in logos should not be overwritten, but if needed, you can use <code>!addlogoforce</code> to add one.<br><br>
+
+			<code class="command">!removelogo &ltteamName&gt</code> <br>
+			Removes a logo. Built-in logos shouldn't be removed normally. If a logo changes, use <code>!addlogo</code> to update it. If you really want to remove a logo, then you can use <code>!removelogoforce</code>. <br><br>
+
+			<code class="command" style="color:red">!logo &ltteam1&gt &ltteam2&gt</code> <br>
+			Note: this command is deprecated, and <code>!tablel</code> should be used instead. This adds team logos to an already made table. Use a dash (-) to omit the logo for a team.
+		</p>
+	</div>
+
+	<!-- MKTC Lounge -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="lounge"><h3>5. MKTC Lounge</h3></a>
+		
+		<p>Commands to get info from the MKTC Lounge spreadsheets. Note: the following commands will only work if <code>enable-lounge-stats</code> is set to true (default is true).
+		</p>
+
+		<p class="description">
+			<code class="command">!mmr [optional names list]</code> <br>
+			Get the mmr of the command user or a list of names. An average mmr will also be calculated if there are two or more names. Here are some examples: <br>
+			<code class="whiteCode" style="color: #00B0F0">!mmr</code>: Get your mmr. Make sure your nickname can be found in the spreadsheet. <br>
+			<code class="whiteCode" style="color: #00B0F0">!mmr player1</code>: Get the mmr of player1. <br>
+			<code class="whiteCode" style="color: #00B0F0">!mmr player1, player2, player3, player4</code>: Get the mmr values of all four players. <br><br>
+
+			<code class="command">!stats [optional name]</code> <br>
+			Get the stats of the 10 most recent events of the command user. Specify <code>optional name</code> to find the name of someone else. This can either be their name or a member ping (@someone). <br><br>
+
+			<code class="command">!stats# [optional name]</code> <br>
+			Get the stats of the command user for the lounge season specified using <code>#</code>. If <code>optional name</code> is provided, this will get the stats for them instead of the command user. For example, use <code class="whiteCode" style="color:#00B0F0">!stats6</code> to get your season 6 stats.<br><br>
+
+			<code class="command">!statsall [optional name]</code> <br>
+			Get all the stats of the command user of all seasons starting from season 1. If <code>optional name</code> is provided, this will get the stats for them instead of the command user. Note that this command may not find <i>all</i> the seasons since a name change between seasons can cause some to be missed. <br><br>
+
+			<code class="command">!top [optional minRank] [optional maxRank]</code> <br>
+			Get the players in the specified rank range. If both options are omitted, the top 10 players will be shown. If one option is provided, then the 10 highest ranks from it are shown. The maximum rank range is 10. <br><br>
+
+			<code class="command">!last# [optional name]</code> <br>
+			Get the stats of the command user, but only take into account the last n events specified in <code>#</code>. If <code>optional name</code> is provided, this will get the stats for them instead of the command user. For example, use <code class="whiteCode" style="color:#00B0F0">!last15</code> to get your stats for the 15 most recent events. <br><br>
+
+			<code class="command" style="color:#04D309">!scoreboard</code> <i>or</i> <br>
+			<code class="command" style="color:#04D309">!scoreboard # player1, player2, ..., player8</code> <br> 
+			Generate the scoreboard for a mogi. Note: This command is only available in the MKTC lounge server and in servers where <code>enable-mogi-gatherer</code> is set to <code style="color:orange">true</code>.
+		</p>
+	</div>
+
+	<!-- Cups -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="cups"><h3>6. Multiplayer Cups</h3></a>
+
+		<p class="description">
+			<code class="command">!cups &lttime&gt</code> <br>
+			Get the cups and tracks that are live at a certain time. Example use cases: <br>
+			<code class="whiteCode" style="color: #00B0F0">!cups now</code> - This will use the current time in UTC<br>
+			<code class="whiteCode" style="color: #00B0F0">!cups 8pm edt</code> <br>
+			<code class="whiteCode" style="color: #00B0F0">!cups 7:00 am pdt</code> <br>
+			<code class="whiteCode" style="color: #00B0F0">!cups 10/29 22:00 CEST</code> <br>
+		</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903793248110256138/image0.png" alt="cups example" height=600px>
+	</div>
+
+	<!-- ranked -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id=ranked><h3>7. Ranked Scores</h3></a>
+		
+		<p>Get an estimate of the possible score on a track given your loadout.</p>
+
+		<p class='description'>
+			<code class="command">im!score</code> <br>
+			Get an estimate of the score possible for your loadout. You should type <code>im!score</code>, and Ice Mario will then send a form for you to fill out. <b>Copy the whole message</b>, fill it out, then send it back. For kart rarity, n=normal, s=super, and h=high end.
+		</p>
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903795947002290176/image0.png" alt="cups example" height=350px>
+
+		<p class="description">
+			<code class="command">im!ac</code> <br>
+			Get an estimate of the action count required to achieve a desired score based on your loadout. This is almost exactly like <code>im!score</code>, but you specify the points instead of Action Count.
+		</p>
+	</div>
+
+	<!-- Custom Commands -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="cc"><h3>8. Custom Commands</h3></a>
+		
+		<p>Custom commands manager for a server</p>
+
+		<p class="description">
+			<code class="command">!cca &ltcommand&gt, &ltvalue&gt</code> <i>or</i> <br>
+			<code class="command">!customcommandadd &ltcommand&gt, &ltvalue&gt</code> <i>or</i> <br>
+			Add or update a custom command. There should be a comma separating <code>command</code> and <code>value</code>, and both of them can be more than one word. If you would like Ice Mario to send back an image instead of text, provide the image link to <code>value</code>. All custom commands will use "!" as the prefix. Here is an example of adding the command <code>!invite</code>:<br>
+		</p>
+
+		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903815679977881630/image0.png" alt="cca example" height=200px>
+
+		<p class="description">
+			<code class="command">!ccr &ltcommand&gt</code> <i>or</i> <br>
+			<code class="command">!customcommandremove &ltcommand&gt</code> <br>
+			Remove a custom command. For example, to remove the command <code>!invite</code> from above, use <code class="whiteCode" style="color:#00B0F0">!ccr invite</code> <br><br>
+
+			<code class="command">!ccl</code> <i>or</i> <br>
+			<code class="command">!customcommandlist</code> <br>
+			List all the custom commands set in a server.
+		</p>
+	</div>
+
+	<!-- Mogi -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="mogi"><h3>9. Mogi Gatherer</h3></a>
+		 
+		<p>These commands are intended to behave the same as Mogibot, but geared specifically for MKT. Originally, these were created as a backup in case Mogibot ever went offline. Note: the following commands will only work if <code>enable-mogi-gatherer</code> is set to true (default is false). There are a few config options available that allows for greater flexability. Overall, Ice Mario will ping <code>@here +4</code> when a mogi is half full, and it will ping <code>@here +1</code> if there are 7 players. When there are 8 players, voting will start, and players will not be able to drop from the mogi. If a player joined 2 or more mogis and one fills, they will automatically be removed from the other mogis.</p>
+
+		<p class='description'>
+			<code class="command">!start</code> <br>
+			Start a mogi. <br><br>
+
+			<code class="command">!end</code> <br>
+			End a mogi. <br><br>
+
+			<code class="command">!esn</code> <br>
+			End the current mogi, if it exists, and start a new mogi. <br><br>
+
+			<code class="command">!c / !can / :pepec:</code> <br>
+			Join a mogi. After 20 minutes of inactivity, Ice Mario will ping the player to type something in the chat, and they will be removed after 25 minutes of inactivity. These can be adjusted in the server config settings.<br><br>
+
+			<code class="command">!d / !drop / :peped:</code> <br>
+			Drop from the current mogi. You cannot drop once a mogi has gathered 8 players.<br><br>
+
+			<code class="command">!da / !dropall</code> <br>
+			Drop from all mogi. You cannot drop once a mogi has gathered 8 players.<br><br>
+
+			<code class="command">!l / !list</code> <br>
+			List all the players in the current mogi.<br><br>
+
+			<code class="command">!r # / !remove #</code> <br>
+			Remove a player from the current mogi, where # is the player number shown after using <code>!l</code>. Only moderators can use this command, and they can use this command to remove someone even after a mogi has started.<br><br>
+
+			<code class="command">!mllu / !mogilistlineup</code> <br>
+			List all the players in each mogi in the server.<br><br>
+
+			<code class="command">!p / !# </code> <br>
+			Ping @here plus the number of players needed to start the mogi. # can be between 1 and 6.<br><br>
+
+			<code class="command">!tag [optional text]</code> <br>
+			Tag the first 8 players in the mogi list. If <code>optional text</code> is provided, it will be added to the end of the member pings.<br><br>
+
+			<code class="command">!votes</code> <br>
+			See what the vote tally is. This can only be used once voting has started.<br><br>
+
+			<code class="command">^teams</code> <br>
+			Show the generated teams once voting has ended.<br><br>
+
+			<code class="command" style="color:#04D309">!teams</code> <br>
+			Randomize teams. More info can be found in the miscellaneous commands section <a href="#misc">here</a>.<br><br>
+		</p>
+	</div>
+
+	<!-- Miscellaneous -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="misc"><h3>10. Miscellaneous commands</h3></a>
+		
+		<p>These are commands that can be individually enabled or disabled. Also, these commands are disabled by default, but they can be enabled by changing the server config settings.</p>
+
+		<p class="description">
+			<code class="command">!choose [optional number] item1, item2, ..., itemN</code> <br>
+			Randomly choose one or more items in the list of items provided. If <code>optional number</code> is omitted, Ice Mario will choose 1 item out of the list. Otherwise, Ice Mario wil choose <code>optional number</code> number of items. The items list can be separated using either a comma or a space. <code>enable-choose</code> must be set to true from the config settings for this to work. Here are some example use cases:<br> <br>
+			<code>!choose banana, orange, mango, strawberry, pineapple</code>: 1 item will be randomly chosen. <br>
+			<code>!choose 1 banana, orange, mango, strawberry, pineapple</code>: 1 item will be randomly chosen. <br>
+			<code>!choose 2 banana orange mango strawberry pineapple</code>: 2 items will be randomly chosen. <br> <br>
+
+			<code class="command">!teams # player1, player2, ..., playerN</code> <br>
+			Randomize n players into the number of teams specified in <code>#</code>. <code>enable-randomize-teams</code> must be set to true from the config settings for this to work. Here are some example use cases: <br> <br>
+			<code>!teams 2 player1, player2, ..., player8</code>: Randomly separate 8 players into two teams for a 4v4. <br>
+			<code>!teams 4 player1, player2, ..., player8</code>: Randomly separate 8 players into four teams for a 2v2.
+		</p>
+	</div>
+
+	<!-- Server Configuration -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id="config"><h3>11. Server Configuration</h3></a>
+		
+		<p>These are all the server config options currently available, as well as commands to set them. Note: the following commands will only work if you have <code class="whiteCode">MANAGE_MESSAGES</code> permission.</p>
+
+		<p class="description">
+			<code class="command">im!config</code> <br>
+			List all the current config options for the server. <br><br>
+
+			<code class="command">im!config &ltkey&gt &ltvalue&gt</code> <br>
+			Set the config option <code>key</code> with the value <code>value</code>. <code>key</code> is one of the options listed below, and they all use a dash (-) instead of a space. For example, to enable the <code>!choose</code> command, use <code class="whiteCode" style="color:#00B0F0">im!config enable-choose true</code><br><br>
+
+			<code class="command">im!resetconfig</code> <br>
+			Reset all the server config options to the default values. The default values are shown below.
+		</p>
+
+		<p>The following is a list of all the config options (in <span style="color: #00B0F0">blue</span>) available as well as their default values (in <span style="color: orange">orange</span>):</p>
+    
+		<div style="margin-left: 40px">
+			Clan War Scheduler
+			<ul>
+				<li><code>enable-schedule</code> (Default: <span style="color: orange">true</span>): Enable or disable all scheduler commands and reactions.</li>
+				<li><code>ping-one-hour-before</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged 1 hour before the scheduled event. If set to false, there will not be such a reminder.</li>
+				<li><code>ping-when-starting</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged when it is time for the scheduled event. If set to false, there will not be such a reminder.</li>
+				<li><code>delete-schedule-after-one-hour</code> (Default: <span style="color: orange">false</span>): If set to true, schedules will automatically be deleted 1 hour after the scheduled event. If set to false, the schedule will not be deleted.</li>
+			</ul>
+			Clan War Score Tracker
+			<ul>
+				<li><code>enable-score-tracker</code> (Default: <span style="color: orange">true</span>): Enable or disable all score tracker commands.</li>
+				<li><code>default-team-name</code> (Default: <span style="color: orange">Team1</span>): Sets the default team name for your server. You can use this to set your team tag so that you don't have to set it everytime you use <code>!startwar</code> or <code>!setteams</code>.</li>
+			</ul>
+			Table Maker
+			<ul>
+				<li><code>enable-table-maker</code> (Default: <span style="color: orange">true</span>): Enable or disable all table maker commands. Note that this does not have any effect for logo commands such as <code>!addlogo</code> or <code>!getlogo</code>.</li>
+			</ul>	
+			Lounge
+			<ul>
+				<li><code>enable-lounge-stats</code> (Default: <span style="color: orange">true</span>): Enable or disable all MKTC lounge commands such as <code>!mmr</code> and <code>!stats</code>.</li>
+			</ul>
+			Mogi
+			<ul>
+				<li><code>enable-mogi-gatherer</code> (Default: <span style="color: orange">false</span>): Enable or disable all mogi commands.</li>
+				<li><code>inactive-minutes-until-drop</code> (Default: <span style="color: orange">25</span>): The number of inactive minutes before someone is dropped from the mogi.</li>
+				<li><code>minutes-to-ping-before-drop</code> (Default: <span style="color: orange">5</span>): The number of minutes before <code style="color: white">inactive-minutes-until-drop</code> to ping someone to have them type something in the chat.</li>
+				<li><code>max-voting-minutes</code> (Default: <span style="color: orange">2</span>): The number of minutes to wait for people to vote on the mogi format after it has started. If the votes did not get 4 votes, then this will close the mogi voting once time is up.</li>
+				<li><code>should-ping-here</code> (Default: <span style="color: orange">true</span>): Whether or not to ping @here.</li>
+			</ul>
+			Miscellaneous
+			<ul>
+				<li><code>enable-choose</code> (Default: <span style="color: orange">false</span>): Enable or disable the <code>!choose</code> command.</li>
+				<li><code>enable-randomize-teams</code> (Default: <span style="color: orange">false</span>): Enable or disable the <code>!teams</code> command to randomize teams for a mogi.</li>
+			</ul>
+
+		</div>
+	</div>
+
 	</body>
 </html>
