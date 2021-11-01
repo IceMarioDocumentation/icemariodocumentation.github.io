@@ -82,9 +82,7 @@
 
 			An FFA survival wars tracker has been added. <br><br>
 
-			Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. <br><br>
-
-			A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline. 
+			Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. 
 		</p>
 	</div>
 
@@ -115,6 +113,10 @@
 		
 		<p>Creates schedules for people to react to.
 			Note: the following commands will only work if <code>enable-schedule</code> is set to true (default is true). By default, Ice Mario will ping members that have reacted 1 hour before an event as well as when an event starts. Also, each schedule will be disabled (indicated by the color black) 1 hour after the scheduled time. You can also have Ice Mario delete the schedule after 1 hour instead. This can all be adjusted by setting the Clan War Scheduler <a href="#config">config options</a>.
+		</p>
+
+		<p>
+			By default, anyone can create and edit schedules. If you would like to change it so that only moderators are able to, change the config value <code>moderators-only-for-scheduler</code> to be true.
 		</p>
 
 		<p>
@@ -556,6 +558,7 @@
 				<li><code>ping-one-hour-before</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged 1 hour before the scheduled event. If set to false, there will not be such a reminder.</li>
 				<li><code>ping-when-starting</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged when it is time for the scheduled event. If set to false, there will not be such a reminder.</li>
 				<li><code>delete-schedule-after-one-hour</code> (Default: <span style="color: orange">false</span>): If set to true, schedules will automatically be deleted 1 hour after the scheduled event. If set to false, the schedule will not be deleted.</li>
+				<li><code>moderators-only-for-scheduler</code> (Default: <span style="color: orange">false</span>): If set to true, only members with <code class="whiteCode">MANAGE_MESSAGES</code> permission can create and edit schedule. If set to false, anyone in the server can do those things.</li>
 			</ul>
 			Clan War Score Tracker
 			<ul>
@@ -578,6 +581,11 @@
 				<li><code>max-voting-minutes</code> (Default: <span style="color: orange">2</span>): The number of minutes to wait for people to vote on the mogi format after it has started. If the votes did not get 4 votes, then this will close the mogi voting once time is up.</li>
 				<li><code>should-ping-here</code> (Default: <span style="color: orange">true</span>): Whether or not to ping @here.</li>
 			</ul>
+			Custom Commands
+			<ul>
+				<li><code>enable-custom-commands</code> (Default: <span style="color: orange">true</span>): Enable or disable custom commands in your server.</li>
+				<li><code>allow-anyone-to-update-cc</code> (Default: <span style="color: orange">true</span>): If set to true, anyone in the server can add, update, or delete custom commands. If set to false, only people with <code class="whiteCode">MANAGE_MESSAGES</code> permission can do so.</li>
+			</ul>
 			Miscellaneous
 			<ul>
 				<li><code>enable-choose</code> (Default: <span style="color: orange">false</span>): Enable or disable the <code>!choose</code> command.</li>
@@ -585,6 +593,18 @@
 			</ul>
 
 		</div>
+	</div>
+
+	<!-- Update info -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<h3>Past Update History</h3>
+		<p>
+			Oct 30, 2021: <br>
+			<ul>
+				<li>A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline.</li>
+			</ul> 
+		</p>
 	</div>
 
 	</body>
