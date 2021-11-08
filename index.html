@@ -78,13 +78,11 @@
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
 		<h3>New Features</h3>
-		<p>(Updated October 31, 2021 4:10 PM PDT)</p>
+		<p>(Updated November 8, 2021)</p>
 		<p>
-			Added <code>!stickycups</code>. <br><br>
+			Added the <code>bold</code> table style option. This will make the player names, player scores, and the header be in bold. For example, the top line in the table command should be <code class="whiteCode">!tablel bold</code>. This will also work for styled tables, such as for CWL: <code class="whiteCode">!tablel cwl bold</code>. <br><br>
 
-			An FFA survival wars tracker has been added. <br><br>
-
-			Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. 
+			Score tracker updates: You can now add or remove a specific race. For example, to remove race 5, do <code class="whiteCode">!u 5</code>. To add a fifth race where the finish positions were 1, 2, 3, 4, do <code class="whiteCode">!a 5 1 2 3 4</code>. By using <code class="whiteCode">!u #</code> followed by <code class="whiteCode">!a # x1 x2 x3 x4</code>, you are able to update a race.
 		</p>
 	</div>
 
@@ -195,15 +193,24 @@
 			<code class="command">!setteams yourTeam opponentTeam</code> <br>
 			Set the opponent team or both team names. This can be skipped if you use <code>!startwar</code>. <br><br>
 
-			<code class="command">!a #1 #2 #3 #4</code> <br>
-			Adds the score for a race using finish positions #1 to #4.
+			<code class="command">!a x1 x2 x3 x4</code> <i>or</i><br>
+			<code class="command">!a [optional race #] x1 x2 x3 x4</code> <br>
+			Adds the score for a race using finish positions x1 to x4. If <code>optional race #</code> is specified, the scores will be added for that race. 
 		</p>
 
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903740635767529482/image0.png" alt="Example score add" height=300px>
 
 		<p class="description">
-			<code class="command">!u</code> <br>
-			Undo the most recent race score <br><br>
+			<code class="command">!u [optional #]</code> <br>
+			Undo a race. If <code>optional #</code> is provided, that race will be removed. Otherwise, it will undo the most recent race score. <br><br>
+
+			Examples: 
+			<ul style="margin-left: 40px">
+				<li><code class="whiteCode">!u</code>: Undo the most recent race.</li>
+				<li><code class="whiteCode">!u 7</code>: Undo race 7.</li>
+			</ul>
+			
+			
 
 			<code class="command">!u all</code> <br>
 			Clears all the race scores in the current channel <br><br>
@@ -272,6 +279,7 @@
 				<li><code>mku</code>: Make an MKU table</li>
 				<li><code>mkt</code>: Add the MKT logo in the middle of the table. <code>cyclone</code> and <code>sw</code> will automatically add it, unless you specify <code>mktoff</code></li>
 				<li><code>mktoff</code>: Don't add the mkt logo. This option can be used to force the table maker to not add the MKT logo.</li>
+				<li><code>bold</code>: Make the player names, player scores, and the header bold.</li>
 			</ul>
 		</div> 
 
@@ -310,7 +318,7 @@
 		<p style="color:orange">Create a table with team logos, and also set the style to be cyclone:</p>
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903765186123546734/image1.png" alt="Table 2" height=600px>
 
-		<p style="color:orange">Add the MKT logo and add a custom title:</p>
+		<p style="color:orange">Add the MKT logo, add a custom date, and add a custom title:</p>
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903857830476537876/image0.png" alt="Table 3" height=600px>
 
 		<p style="color:orange">Add team logos, specify the team colors, add a penalty to a player, and add a penalty to a team:</p>
@@ -602,6 +610,15 @@
 	<div class="text">
 		<h3>Past Update History</h3>
 		<p>
+			Oct 31, 2021: <br>
+			<ul>
+				<li>Added <code>!stickycups</code>. </li>
+
+				<li>An FFA survival wars tracker has been added. </li>
+
+				<li>Server configuration options are here! This allows for greater flexability to choose what commands to enable or disable. </li>
+			</ul>
+
 			Oct 30, 2021: <br>
 			<ul>
 				<li>A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline.</li>
