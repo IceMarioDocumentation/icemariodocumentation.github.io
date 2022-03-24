@@ -531,6 +531,11 @@
 		<p>These are commands that can be individually enabled or disabled. Also, these commands are disabled by default, but they can be enabled by changing the server config settings.</p>
 
 		<p class="description">
+			<code class="command">!im text<text></code> <br>
+			Makes Ice Mario repeat whatever is provided in <code>text</code>. Here are some example use cases:<br> <br>
+			<code>!im Hello World</code>: A message saying "Hello World" will be sent back.
+			<code>!im :pepeClown:</code>: Ice Mario will send back the pepeClown emoji.<br> <br>
+
 			<code class="command">!choose [optional number] item1, item2, ..., itemN</code> <br>
 			Randomly choose one or more items in the list of items provided. If <code>optional number</code> is omitted, Ice Mario will choose 1 item out of the list. Otherwise, Ice Mario wil choose <code>optional number</code> number of items. The items list can be separated using either a comma or a space. <code>enable-choose</code> must be set to true from the config settings for this to work. Here are some example use cases:<br> <br>
 			<code>!choose banana, orange, mango, strawberry, pineapple</code>: 1 item will be randomly chosen. <br>
