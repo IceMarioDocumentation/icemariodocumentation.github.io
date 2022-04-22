@@ -266,7 +266,7 @@
 			<code class="command">Player2 [mx] 90</code> <br>
 			<code class="command">...</code> <br>
 
-			To add team logos, use <code>!tablel</code> instead of <code>!table</code>. <br><br>
+			To add team logos, use <code>!tablel</code> instead of <code>!table</code>. If a team has a logo but the color is not set, the text will be white by default.<br><br>
 
 			[style options]: Optional style modifiers. All style options should be written on the same line as the command, separated by a space. <br>
 
@@ -279,8 +279,9 @@
 				<li><code>sw</code>: Make a survival war table</li>
 				<li><code>mku</code>: Make an MKU table</li>
 				<li><code>mkt</code>: Add the MKT logo in the middle of the table. <code>cyclone</code> and <code>sw</code> will automatically add it, unless you specify <code>mktoff</code></li>
-				<li><code>mktoff</code>: Don't add the mkt logo. This option can be used to force the table maker to not add the MKT logo.</li>
-				<li><code>bold</code>: Make the player names, player scores, and the header bold.</li>
+				<li><code>nomkt</code>: Don't add the mkt logo. This option can be used to force the table maker to not add the MKT logo.</li>
+				<li><code>bold</code>: Make the player names, and player scores bold.</li>
+				<li><code>nobold</code>: This option can be used to force the table maker to not make any of the text bold.</li>
 			</ul>
 		</div> 
 
@@ -338,17 +339,32 @@
 		<p>The logos manager.</p>
 
 		<p class="description">
-			<code class="command">!getlogo &ltteamName&gt</code> <br>
+			<code class="command">!logoget &ltteamName&gt</code> <br>
 			Send back the team logo sepcified by <code>teamName</code> if available. <br><br>
 
-			<code class="command">!listlogos</code> <br>
-			Get a list of all the logos available. <br><br>
+			<code class="command">!logolist [optional category]</code> <br>
+			Get a list of all the logos available, or only the logos in the specified category if <code>category</code> is provided. <br><br>
 
-			<code class="command">!addlogo &ltteamName&gt [optional image link]</code> <br>
-			Adds a new logo. The clan tag should be one word without any spaces. Optionally, you can provide the logo link in <code>optional image link</code> if you have the url available. Otherwise, send the image when using the command. When logos are added, they will be immediately available, and they will eventually become a "built-in" logo. This just means they will be cropped, the background will be removed, and a team color will be assigned to it. Built-in logos should not be overwritten, but if needed, you can use <code>!addlogoforce</code> to add one.<br><br>
+			<code class="command">!logolistimage &ltcategory&gt</code> <br>
+			Get a list of all the logo icons in a category as an image. <br><br>
 
-			<code class="command">!removelogo &ltteamName&gt</code> <br>
-			Removes a logo. Built-in logos shouldn't be removed normally. If a logo changes, use <code>!addlogo</code> to update it. If you really want to remove a logo, then you can use <code>!removelogoforce</code>. <br><br>
+			<code class="command">!logocategory &ltteamName&gt &ltcategory&gt</code> <br>
+			Update the category for a logo. This is used to sort logos when using the <code>!logolist</code> or <code>!logolistimage</code> commands. <br><br>
+
+			<code class="command">!logoadd &ltteamName&gt [optional image link]</code> <br>
+			Adds a new logo. The clan tag should be one word without any spaces, and it should be at most 7 characters. Optionally, you can provide the logo link in <code>optional image link</code> if you have the url available. Otherwise, send the image when using the command. <br><br>
+
+			<code class="command">!logoremove &ltteamName&gt</code> <br>
+			Removes a logo. <br><br>
+
+			<code class="command">!logocolor &ltteamName&gt [optional color]</code> <br>
+			If <code>color</code> is provided, this will update the color for the team. Otherwise, the current color of the team is returned. <br><br>
+
+			<code class="command">!logolock &ltteamName&gt</code> <br>
+			Locks a logo to your server. This will prevent a different server from changing the logo, such as changing the logo image, removing the logo, changing the color, or changing the category.<br><br>
+
+			<code class="command">!logounlock &ltteamName&gt</code> <br>
+			Unlocks a logo to your server. <br><br>
 
 			<code class="command" style="color:red">!logo &ltteam1&gt &ltteam2&gt</code> <br>
 			Note: this command is deprecated, and <code>!tablel</code> should be used instead. This adds team logos to an already made table. Use a dash (-) to omit the logo for a team.
@@ -584,6 +600,7 @@
 			Table Maker
 			<ul>
 				<li><code>enable-table-maker</code> (Default: <span style="color: orange">true</span>): Enable or disable all table maker commands. Note that this does not have any effect for logo commands such as <code>!addlogo</code> or <code>!getlogo</code>.</li>
+				<li><code>enable-logo-colors</code> (Default: <span style="color: orange">true</span>): Enable or disable displaying colors when using the <code>!tablel</code> command. If set to false, the text will be white by default, but you can still set the color for a team by specifying it to the right of the team name (like <code>DY #FF0000</code>).</li>
 			</ul>	
 			Lounge
 			<ul>
@@ -639,7 +656,7 @@
 			<ul>
 				<li>A new mogi gatherer module has been created for MKT. This can be used in the event Mogibot is offline.</li>
 			</ul> 
-			
+
 			Oct 31, 2021: <br>
 			<ul>
 				<li>Added <code>!stickycups</code>. </li>
