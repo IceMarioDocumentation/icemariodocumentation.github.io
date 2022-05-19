@@ -134,8 +134,8 @@
 		</p>
 
 		<p class="description">
-			<code class="command">!create &ltevent title&gt &ltdate and time&gt [optional restriction or preference]</code> <br>
-			Create a new schedule. You will need to provide the event title as well as the date. Optionally, you can use <span class="whiteCode" style="color: #00B0F0">!createc</span> instead to create a condensed schedule; each member is shown on one line instead of on separate lines for each reaction. <code>optional restriction or preferance</code> will show up in a line named Restricted, and this allows people to see what the preferance is. Reactions can be restricted so that only certain roles can react to join. If you would like this feature, feel free to contact me (Jimmy ツ#5440).
+			<code class="command">!create &ltevent title&gt &ltdate and time&gt [optional restriction]</code> <br>
+			Create a new schedule. You will need to provide the event title as well as the date. Optionally, you can use <span class="whiteCode" style="color: #00B0F0">!createc</span> instead to create a condensed schedule; each member is shown on one line instead of on separate lines for each reaction. <code>optional restriction</code> will only allow people with a specific role to join. To add a restriction, use !scheduleroleadd or !sra, and a lock icon &#128274 should show up indicating the schedule is restricted. If the lock icon is not present, the schedule is not role restricting. Then, when using !create, add the restriction name (you specify the name when using !sra) as well as the word 'only' at the end of the command. For example, if you have a restriction with name <span class="code">sapphire</span>, use <span class="whiteCode" style="color: #00B0F0">!create vs. someone today 9pm pdt sapphire only</span> to only allow people with the sapphire role to join.
 		</p> 
 
 		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903713374733484092/image0.png" alt="Example Schedule" height=300px>
@@ -166,10 +166,35 @@
 			<code class="command">!stickyschedule</code> <br>
 			Initializes a sticky schedule for a server. This will show a list of all the schedules, and it will be updated once a minute. This is most helpful if its used in its own channel. Note: you will need <span class="whiteCode">MANAGE_MESSAGES</span> permission. This command can be used multiple times, but only the most recent message will be updated. You may delete the sticky schedule message to stop further updates. <br><br>
 
+			<code class="command">!scheduleroleadd &ltname&gt &ltallowed roles&gt [channel redirect] [nosub]</code> <br>
+			Add a schedule restriction so only server members with one of the roles specified in <span class="code">allowed roles</span> can react. <br><br>
+			- alias: !sra<br>
+			- name: The name (1 word) for the role, to be used when using !create command.<br>
+			- allowed roles</span>: @roles or role IDs that can react with can. If more than one, separate each of them by a space. Example: <span class="code">!sra test @role @leader</span>. <br>
+			- channel redirect (optional): #channel or channel ID to redirect all schedule messages to. If you include this, whenever a schedule is created anywhere in your server, it will be redirected to the specified channel instead of the current channel. For example, if you have a channel called #schedule and a channel called #chat, using the !create command inside #chat will cause the schedule to be sent to #schedule instead. In addition, you can add a default schedule redirect. This will redirect all schedules that do not already have a channel redirect to a specific channel. To do so, use default for the name parameter and also provide a channel like so: <span class="code">!sra default #schedules</span>. Note: If the channel you are typing in already has a channel redirect, then the default redirect will be ignored and the schedule will be sent to your current channel. <br>
+			- nosub (optional): Include the text <span class="whiteCode">nosub</span> at the end to disallow sub reactions. If you include the text nosub at the end of the command, this will prevent people without the allowed roles from being able to react with can and sub. Without it, people without the necessary roles can still react with sub. <br><br>
+
+			Examples:<br>
+			- Restrict a schedule to only people with the @example role:<br>
+			<span class="code">!sra example @example</span><br>
+			- Redirect all non-restricted schedules to a default channel #schedules:<br>
+			<span class="code">!sra default #schedules</span><br>
+			- Restrict a schedule to @example and @leader roles, and prevent others from reacting with sub:<br>
+			<span class="code">!sra example @example @leader nosub</span><br>
+			- Restrict a schedule to @example, @leader, and @trial role, and add a channel redirect to a channel named trial-schedules:<br>
+			<span class="code">!sra example @example @leader @trial #trial-schedules</span><br><br>
+
+			<code class="command">!scheduleroleremove &ltname&gt</code> <br>
+			alias: <span class="whiteCode">!srr &ltname&gt</span><br>
+			Remove a schedule restriction.<br><br>
+
+			<code class="command">!schedulerolelist</code> <br>
+			alias: <span class="whiteCode">!srl</span><br>
+			List all the schedule restrictions for your server.<br><br>
+
 			<span style="margin-left: -35px">Add one of the following reactions to a schedule to modify it:</span>
 			<br>
 			<!-- Go to https://www.w3schools.com/charsets/ref_emoji.asp for a list of emoji codes -->
-			&#128221: Edit the schedule title, date, or restriction. <br>
 			&#10060: Enable or disable a schedule. The schedule will be black if disabled. <br>
 			&#128260: Switch between a condensed and uncondensed schedule format.
 		</p>
