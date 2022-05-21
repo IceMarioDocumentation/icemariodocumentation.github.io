@@ -94,14 +94,15 @@
 		<a href="#score">2. Clan War Score Tracker</a> <br>
 		<a href="#table">3. Table maker</a> <br>
 		<a href="#logos">4. Logos</a> <br>
-		<a href="#lounge">5. MKTC Lounge</a> <br>
-		<a href="#cups">6. Multiplayer Cup</a> <br>
-		<a href="#ranked">7. Ranked Scores</a> <br>
-		<a href="#cc">8. Custom Commands</a> <br>
-		<a href="#mogi">9. Mogi Gatherer</a> <br>
-		<a href="#misc">10. Miscellaneous commands</a> <br>
-		<a href="#config">11. Server Configuration</a> <br>
-		<a href="#privacy">12. Privacy Policy</a> <br>
+		<a href="#flags">5. Custom Flags</a> <br>
+		<a href="#lounge">6. MKTC Lounge</a> <br>
+		<a href="#cups">7. Multiplayer Cup</a> <br>
+		<a href="#ranked">8. Ranked Scores</a> <br>
+		<a href="#cc">9. Custom Commands</a> <br>
+		<a href="#mogi">10. Mogi Gatherer</a> <br>
+		<a href="#misc">11. Miscellaneous commands</a> <br>
+		<a href="#config">12. Server Configuration</a> <br>
+		<a href="#privacy">13. Privacy Policy</a> <br>
 		<a href=""></a>
 
 	</div>
@@ -396,10 +397,50 @@
 		</p>
 	</div>
 
+	<!-- Custom Flags -->
+	<hr class="line" color=#B7B5B5>
+	<div class="text">
+		<a id=flags><h3>5. Custom Flags</h3></a>
+		
+		<p>Custom flags manager. Allows people to add or remove flags to be used when creating a table.</p>
+
+		<p class='description'>
+			<code class="command">!flagadd &ltname&gt [optional image url]</code> <br>
+			Add or update a flag. <br><br>
+
+			- alias: !addflag <br>
+			- name: A one word name for the flag. This can only be at most 7 characters, and it can only include letters a-z, numbers, underscore, and a dash.<br>
+			- image url: Either provide the url to a flag, or provide the image as an attachment.
+		</p>
+
+		<p class="description">
+			<code class="command">!flagremove &ltname&gt</code> <br>
+			Remove a custom flag.<br><br>
+
+			- alias: !removeflag<br>
+			- name: The name of the flag to remove.
+		</p>
+
+		<p class="description">
+			<code class="command">!flaglist</code> <br>
+			Get an image listing all the custom flags that have been added.<br><br>
+
+			- alias: !listflag, !listflags<br>
+		</p>
+
+		<p class="description">
+			<code class="command">!flagget &ltname&gt</code> <br>
+			Get an image of the specified flag. This can either be a custom flag or an Hlorenzi flag.<br><br>
+
+			- alias: !getflag<br>
+			- name: The name of the flag.
+		</p>
+	</div>
+
 	<!-- MKTC Lounge -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="lounge"><h3>5. MKTC Lounge</h3></a>
+		<a id="lounge"><h3>6. MKTC Lounge</h3></a>
 		
 		<p>Commands to get info from the MKTC Lounge spreadsheets. Note: the following commands will only work if <code>enable-lounge-stats</code> is set to true (default is true).
 		</p>
@@ -438,7 +479,7 @@
 	<!-- Cups -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="cups"><h3>6. Multiplayer Cups</h3></a>
+		<a id="cups"><h3>7. Multiplayer Cups</h3></a>
 
 		<p class="description">
 			<code class="command">!cups &lttime&gt</code> <br>
@@ -461,7 +502,7 @@
 	<!-- ranked -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id=ranked><h3>7. Ranked Scores</h3></a>
+		<a id=ranked><h3>8. Ranked Scores</h3></a>
 		
 		<p>Get an estimate of the possible score on a track given your loadout.</p>
 
@@ -480,7 +521,7 @@
 	<!-- Custom Commands -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="cc"><h3>8. Custom Commands</h3></a>
+		<a id="cc"><h3>9. Custom Commands</h3></a>
 		
 		<p>Custom commands manager for a server</p>
 
@@ -506,7 +547,7 @@
 	<!-- Mogi -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="mogi"><h3>9. Mogi Gatherer</h3></a>
+		<a id="mogi"><h3>10. Mogi Gatherer</h3></a>
 		 
 		<p>These commands are intended to behave the same as Mogibot, but geared specifically for MKT. Originally, these were created as a backup in case Mogibot ever went offline. Note: the following commands will only work if <code>enable-mogi-gatherer</code> is set to true (default is false). There are a few config options available that allows for greater flexability. Overall, Ice Mario will ping <code>@here +4</code> when a mogi is half full, and it will ping <code>@here +1</code> if there are 7 players. When there are 8 players, voting will start, and players will not be able to drop from the mogi. If a player joined 2 or more mogis and one fills, they will automatically be removed from the other mogis.</p>
 
@@ -565,7 +606,7 @@
 	<!-- Miscellaneous -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="misc"><h3>10. Miscellaneous commands</h3></a>
+		<a id="misc"><h3>11. Miscellaneous commands</h3></a>
 		
 		<p>These are commands that can be individually enabled or disabled. Also, these commands are disabled by default, but they can be enabled by changing the server config settings.</p>
 
@@ -591,7 +632,7 @@
 	<!-- Server Configuration -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="config"><h3>11. Server Configuration</h3></a>
+		<a id="config"><h3>12. Server Configuration</h3></a>
 		
 		<p>These are all the server config options currently available, as well as commands to set them. Note: the following commands will only work if you have <code class="whiteCode">MANAGE_MESSAGES</code> permission.</p>
 
@@ -656,7 +697,7 @@
 	<!-- Privacy Policy -->
 	<hr class="line" color=#B7B5B5>
 	<div class="text">
-		<a id="privacy"><h3>12. Privacy Policy</h3></a>
+		<a id="privacy"><h3>13. Privacy Policy</h3></a>
 		
 		<p>When you invite Ice Mario into your server, information needed to operate will be stored. The following list will show what data is collected:</p>
 
