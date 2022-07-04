@@ -126,10 +126,14 @@
 		</p>
 
 		<p>
+			By default, the gather size for the scheduler is 4, but you can edit the <code>gather-size</code> config option to be any number.
+		</p>
+
+		<p>
 			The schedule message color will change based on the number of people that have signed up. They are as follows:<br>
 			<ul>
-				<li>Red: The <code>can list</code> and <code>sub list</code> have a combined total of 2 or less people.</li>
-				<li>Green: There are 4 or more players on the <code>can list</code>.</li>
+				<li>Red: The <code>can list</code> and <code>sub list</code> have a combined total less than or equal to (<code>gather-size</code> - 2).</li>
+				<li>Green: There are <code>gather-size</code> or more players on the <code>can list</code>.</li>
 				<li>Yellow: When there are almost enough people for an event.</li>
 			</ul>
 		</p>
@@ -245,23 +249,23 @@
 			<code class="command">!penalty &ltpoints&gt &ltteam name&gt</code> <br>
 			Applies a penalty to the specified team <br><br>
 
-			<span style="margin-left: -35px">The following commands can be used to keep track of a team survival war:</span>
+			<span style="margin-left: -35px">The following commands can be used to keep track of a survival war, either 4v4 or ffa:</span>
 			<br><br>
 
-			<code class="command">!startsurvival</code><br>
+			<code class="command">!startsurvival numLives</code><br>
 			<code class="command">team1Name, player1, player2, player3, player4</code><br>
 			<code class="command">team2Name, player1, player2, player3, player4</code><br>
 			Starts a team survival war life tracker. See below to see how to create an FFA survival tracker. You can use <code>!ss</code> instead of <code>!startsurvival</code>. There should be 3 lines total. 
 		</p>
 
-		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/903745775559901274/image0.png" alt="Example survival war" height=400px>
+		<img class="image" src="https://media.discordapp.net/attachments/957068353720172594/993550469794373802/IMG_2775.png" alt="Example survival war" height=400px>
 
 		<p class="description">
-			<code class="command">!startsurvival player1, player2, ..., playerN</code> <br>
+			<code class="command">!startsurvival numLives player1, player2, ..., playerN</code> <br>
 			Starts an FFA survival war life tracker. For FFA, the command and player list should all be on the same line. There can be any number of players; it is not limited to only 8 players. You can use <code>!ss</code> instead of <code>!startsurvival</code>. 
 		</p>
 
-		<img class="image" src="https://media.discordapp.net/attachments/771426480126558229/904088272093999164/image0.png" alt="Example FFA survival war" height=300px>
+		<img class="image" src="https://media.discordapp.net/attachments/957068353720172594/993550470046044200/IMG_2776.png" alt="Example FFA survival war" height=300px>
 
 		<p class="description">
 			<code class="command">!x player#</code> <br>
@@ -654,9 +658,11 @@
 			<ul>
 				<li><code>enable-schedule</code> (Default: <span style="color: orange">true</span>): Enable or disable all scheduler commands and reactions.</li>
 				<li><code>ping-one-hour-before</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged 1 hour before the scheduled event. If set to false, there will not be such a reminder.</li>
+				<li><code>ping-15-minutes-before</code> (Default: <span style="color: orange">false</span>): If set to true, members that have reacted to the schedule will be pinged 15 minutes before the scheduled event. If set to false, there will not be such a reminder.</li>
 				<li><code>ping-when-starting</code> (Default: <span style="color: orange">true</span>): If set to true, members that have reacted to the schedule will be pinged when it is time for the scheduled event. If set to false, there will not be such a reminder.</li>
 				<li><code>delete-schedule-after-one-hour</code> (Default: <span style="color: orange">false</span>): If set to true, schedules will automatically be deleted 1 hour after the scheduled event. If set to false, the schedule will not be deleted.</li>
-				<li><code>moderators-only-for-scheduler</code> (Default: <span style="color: orange">false</span>): If set to true, only members with <code class="whiteCode">MANAGE_MESSAGES</code> permission can create and edit schedule. If set to false, anyone in the server can do those things.</li>
+				<li><code>moderators-only-for-scheduler</code> (Default: <span style="color: orange">false</span>): If set to true, only members with <code class="whiteCode">MANAGE_MESSAGES</code> permission can create and edit schedule. If set to false, anyone in the server can do those things.</li>				
+				<li><code>gather-size</code> (Default: <span style="color: orange">4</span>): The number of participants that need to join in order for the schedule to be considered full (the schedule color will turn green).</li>
 			</ul>
 			Clan War Score Tracker
 			<ul>
