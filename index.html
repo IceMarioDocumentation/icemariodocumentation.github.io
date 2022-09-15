@@ -304,10 +304,13 @@
 
 		<div style="margin-left: 40px">
 			<ul>
-				<li><code>cwl</code>: Make a CWL table</li>
-				<li><code>cyclone</code>: Make a cyclone table</li>
-				<li><code>sw</code>: Make a survival war table</li>
-				<li><code>mku</code>: Make an MKU table</li>
+				<li><code>cwl</code>: Make a CWL table (MKT)</li>
+				<li><code>cyclone</code>: Make a cyclone table (MKT)</li>
+				<li><code>sw</code>: Make a survival war table (MKT)</li>
+				<li><code>mku</code>: Make an MKU table (MK8DX)</li>
+				<li><code>pl</code>: Make a Pacific League table (MK8DX)</li>
+				<li><code>mkcf</code>: Make a MKCentral Frontier table (MK8DX)</li>
+				<li><code>summit</code>: Make a MKCentral Summit table (MK8DX)</li>
 				<li><code>mkt</code>: Add the MKT logo in the middle of the table. <code>cyclone</code> and <code>sw</code> will automatically add it, unless you specify <code>mktoff</code></li>
 				<li><code>nomkt</code>: Don't add the mkt logo. This option can be used to force the table maker to not add the MKT logo.</li>
 				<li><code>bold</code>: Make the player names, and player scores bold.</li>
@@ -323,6 +326,7 @@
 			<ul>
 				<li><code>#date &ltdate&gt</code>: Set the date on the header</li>
 				<li><code>#title &lttitle&gt</code>: Set a custom title to the left of the date</li>
+				<li><code>#icon &lturl&gt</code>: Set a custom icon image on the top left of the table</li>
 				<li><code>#dotalpha &ltval&gt</code>: Set the dot transparency. The value should between 0 and 1; a value of 0 will not display the dots.</li>
 				<li><code>#dotcolor &lt#000000&gt</code>: Set the dot color in hex format</li>
 				<li><code>#bgbright &ltval&gt</code>: Set the background brightness if a background image is being used. Val should be between 0 and 1 where 0 is full dark and 1 is full bright.</li>
@@ -681,10 +685,21 @@
 			Mogi
 			<ul>
 				<li><code>enable-mogi-gatherer</code> (Default: <span style="color: orange">false</span>): Enable or disable all mogi commands.</li>
+				<li><code>room-size</code> (Default: <span style="color: orange">8</span>): The number of people needed to start a mogi.</li>
+				<li><code>max-subs</code> (Default: <span style="color: orange">2</span>): The number of people that can !c once a mogi has started.</li>
 				<li><code>inactive-minutes-until-drop</code> (Default: <span style="color: orange">25</span>): The number of inactive minutes before someone is dropped from the mogi.</li>
 				<li><code>minutes-to-ping-before-drop</code> (Default: <span style="color: orange">5</span>): The number of minutes before <code style="color: white">inactive-minutes-until-drop</code> to ping someone to have them type something in the chat.</li>
 				<li><code>max-voting-minutes</code> (Default: <span style="color: orange">2</span>): The number of minutes to wait for people to vote on the mogi format after it has started. If the votes did not get 4 votes, then this will close the mogi voting once time is up.</li>
 				<li><code>should-ping-here</code> (Default: <span style="color: orange">true</span>): Whether or not to ping @here.</li>
+				<li><code>only-moderator-start</code> (Default: <span style="color: orange">false</span>): Whether or not only members with <code class="whiteCode">MANAGE_MESSAGES</code> can start a mogi.</li>
+				<li><code>only-moderator-end</code> (Default: <span style="color: orange">false</span>): Whether or not only members with <code class="whiteCode">MANAGE_MESSAGES</code> can end a mogi.</li>
+				<li><code>only-moderator-remove</code> (Default: <span style="color: orange">false</span>): Whether or not only members with <code class="whiteCode">MANAGE_MESSAGES</code> can remove someone from a mogi.</li>
+				<li><code>enable-voting</code> (Default: <span style="color: orange">false</span>): Enable or disable all voting one a mogi fills.</li>
+				<li><code>enable-voting-ffa</code> (Default: <span style="color: orange">true</span>): Enable or disable the option to vote for ffa.</li>
+				<li><code>enable-voting-2v2</code> (Default: <span style="color: orange">true</span>): Enable or disable the option to vote for 2v2.</li>
+				<li><code>enable-voting-4v4</code> (Default: <span style="color: orange">true</span>): Enable or disable the option to vote for 4v4.</li>
+				<li><code>randomize-teams-2v2</code> (Default: <span style="color: orange">true</span>): Whether or not to randomize 2v2 teams when voting is complete.</li>
+				<li><code>randomize-teams-4v4</code> (Default: <span style="color: orange">true</span>): Whether or not to randomize 4v4 teams when voting is complete.</li>
 			</ul>
 			Custom Commands
 			<ul>
