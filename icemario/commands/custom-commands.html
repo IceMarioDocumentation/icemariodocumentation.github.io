@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/icemariopfp.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
 
         <div id="nav">
             <span id="nav-closebtn" onclick="closeNav()">&times;</span>
-            <a href="../" id="nav-home-btn">About</a>
+            <a href="../" id="nav-home-btn">Home</a>
 
             <div class="nav-category nav-top-border">
                 <p>Commands</p>
@@ -62,28 +63,41 @@
             There is a limit of 25 commands per server. If you really need to increase the limit, please <a href="../resources/contact.html">contact me</a> for assistance.
         </p>
 
+
+
+
+
         <code class="cmd">!customcommandadd command, value</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!cca</code></span></div>
 		<p class="indent">
-			Add or update a custom command. <br><br>
-
             <span><code class="arg">command</code>: The name of the command to create<br></span>
             <span><code class="arg">value</code>: What the command should return<br><br></span>
+			
+            Add or update a custom command. <br><br>
             
             There should be a comma separating <code>command</code> and <code>value</code>, and both of them can be more than one word. If you would like Ice Mario to send back an image instead of text, provide the image link to <code>value</code>. All custom commands will use "!" as the prefix. Here is an example of adding the command <code>!invite</code>:<br>
 		</p>
-
         <div class="img-container" style="height: 200px;">
             <img class="image img-round-shadow" src="https://media.discordapp.net/attachments/771426480126558229/903815679977881630/image0.png">
         </div>
 
+
+
+
+
         <code class="cmd">!customcommandremove command</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!ccr</code></span></div>
 		<p class="indent">
-			Remove a custom command. <br><br>
             <span><code class="arg">command</code>: The name of the command to create<br><br></span>
+
+			Remove a custom command. <br><br>
+
             For example, to remove the command <code>!invite</code> from above, use <code class="example">!ccr invite</code>
         </p>
+
+
+
+
 
 		<code class="cmd">!customcommandlist</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!ccl</code></span></div>

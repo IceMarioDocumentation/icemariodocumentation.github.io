@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/icemariopfp.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
 
         <div id="nav">
             <span id="nav-closebtn" onclick="closeNav()">&times;</span>
-            <a href="../" id="nav-home-btn">About</a>
+            <a href="../" id="nav-home-btn">Home</a>
 
             <div class="nav-category nav-top-border">
                 <p>Commands</p>
@@ -63,13 +64,17 @@
             Scheduler commands can be customized or disabled entirely by editing your server's <a href="config.html">config options</a>.
         </p>
 
+
+
+
+
 		<code class="cmd">!create &ltevent title&gt &ltdate and time&gt [optional restriction]</code>
 		<p class="indent">
-			Create a new schedule. <br><br>
-
             <span><code class="arg">event title</code>: The name of the event<br></span>
             <span><code class="arg">date and time</code>: When the event takes place. Click <a href="../resources/tips.html">here</a> for an explanation on how dates are parsed.<br></span>
-            <span><code class="arg">optional restriction</code>: Only allow people with a certain role to react. Note: you must first add a restriction with <code class="example">!scheduleroleadd</code> (shown below) in order for it to work.<br></span><br>
+            <span><code class="arg">optional restriction</code>: Only allow people with a certain role to react. Note: you must first add a restriction with <code class="example">!scheduleroleadd</code> (shown below) in order for it to work.</span><br><br>
+
+			Create a new schedule. <br><br>
 
             If using <code>optional restriction</code>, add the word "only" after the restriction name. 
             For example, if you have a restriction with name <code>sapphire</code>, you'd type 
@@ -110,14 +115,22 @@
             reaction if they switch to a different one. 
         </p>
 
+
+
+
+
         <code class="cmd">!scheduleedit &ltschedule message link&gt &ltnew title and date&gt</code>
         <p class="indent">
-            Edit an existing schedule's title, date, or the restriction.<br><br>
             <span><code class="arg">schedule message link</code>: The Discord message link<br></span>
-            <span><code class="arg">new title and date</code>: The title and date like when a schedule was created<br></span><br>
+            <span><code class="arg">new title and date</code>: The title and date like when a schedule was created</span><br><br>
+            
+            Edit an existing schedule's title, date, or the restriction.<br><br>
 
             If you originally created a schedule with <code class="example">!create vs someone today 5pm pdt</code> but need to change the time to 8pm, then an example would be <code class="example">!scheduleedit https://discord.com/channels/12345/67890/19283 vs someone today 8pm pdt</code>.
         </p>
+
+
+
 
 
         <code class="cmd">!scheduleadd &ltschedule message link&gt &ltcan/sub&gt &ltmember ping&gt</code>
@@ -127,14 +140,30 @@
             <img class="image img-round-shadow" src="../assets/scheduleadd.jpeg" alt="Example schedule add">
         </div>
 
+
+
+
+
 		<code class="cmd">!scheduleremove &ltschedule message link&gt &ltmember ping&gt</code>
 		<p class="indent">Remove someone from an existing schedule.</p>
 			
+
+
+
+
 		<code class="cmd">!schedule</code>
 		<p class="indent">Get a list of all the schedules in your server for the day (based on Pacific Time).</p>
 
+
+
+
+
 		<code class="cmd">!myschedule</code>
 		<p class="indent">Get a list of all the schedules you have signed up for.</p>
+
+
+
+
 
 		<code class="cmd">!stickyschedule</code>
 		<p class="indent">Initializes a sticky schedule for a server. This will show a list of all the 
@@ -144,18 +173,21 @@
             delete the sticky schedule message to stop further updates.
         </p>
 
+
+
+
+
 		<code class="cmd">!scheduleroleadd &ltname&gt &ltallowed roles&gt [channel redirect] [nosub]</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!sra</code></span></div>
-		<p class="indent">Add a schedule restriction so only server members with one of the roles 
-            specified in <span class="code">allowed roles</span> can react. 
-            <br><br>
-
+		<p class="indent">
             <span><code class="arg">name</code>: The name (1 word) for the role, to be used when using the <code>!create</code> command.<br></span>
             <span><code class="arg">allowed roles</code>: @roles or role IDs that can react with the can emoji. If 
                 more than one, separate each of them by a space. Example: <code class="example">!sra test @role @leader</code>.</span><br>
             <span><code class="arg">channel redirect</code>(optional): #channel mention or channel ID to redirect all schedule messages to. <br></span>
-            <span><code class="arg">nosub</code> (optional): Include the text <code class="example">nosub</code> at the end to 
-                disallow sub reactions. </span><br><br>
+            <span><code class="arg">nosub</code> (optional): Include the text <code class="example">nosub</code> at the end to disallow sub reactions. </span><br><br>
+
+            Add a schedule restriction so only server members with one of the roles 
+            specified in <span class="code">allowed roles</span> can react. <br><br>
 
             If you include <code>channel redirect</code>, whenever a schedule is created anywhere in your server, it will be 
             redirected to the specified channel instead of the current channel. For example, if you have 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/icemariopfp.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
 
         <div id="nav">
             <span id="nav-closebtn" onclick="closeNav()">&times;</span>
-            <a href="../" id="nav-home-btn">About</a>
+            <a href="../" id="nav-home-btn">Home</a>
 
             <div class="nav-category nav-top-border">
                 <p>Commands</p>
@@ -60,16 +61,18 @@
 		<code class="cmd">!flagadd name [optional image url]</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!addflag</code></span></div>
 		<p class='indent'>
-			Add or update a flag. <br><br>
             <span><code class="arg">name</code>: A one word name for the flag. This can only be at most 7 characters, and it can only include letters a-z, numbers, underscore, and a dash.<br></span>
-            <span><code class="arg">image url</code>: Either provide the url to a flag, or provide the image as an attachment.<br></span>
+            <span><code class="arg">image url</code>: Either provide the url to a flag, or provide the image as an attachment.<br></span><br>
+
+            Add or update a flag.
 		</p>
 
 		<code class="cmd">!flagremove name</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!removeflag</code></span></div>
 		<p class="indent">
-			Remove a custom flag.<br><br>
-            <span><code class="arg">name</code>: The name of the flag to remove.<br></span>
+            <span><code class="arg">name</code>: The name of the flag to remove.<br></span><br>
+
+			Remove a custom flag.
 		</p>
 
 		<code class="cmd">!flaglist</code>
@@ -81,8 +84,9 @@
 		<code class="cmd">!flagget name</code>
         <div class="alias-wrapper"><span class="alias">Alias: <code>!getflag</code></span></div>
 		<p class="indent">
-			Get an image of the specified flag. This can either be a custom flag or an Hlorenzi flag.<br><br>
-            <span><code class="arg">name</code>: The name of the flag to get.<br></span>
+            <span><code class="arg">name</code>: The name of the flag to get.<br></span><br>
+
+			Get an image of the specified flag. This can either be a custom flag or an Hlorenzi flag.
 		</p>
 
     </div>  
